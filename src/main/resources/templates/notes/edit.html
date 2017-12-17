@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: header">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Note Edit</h3>
+
+    <form th:object="${note}" method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" th:field="*{title}"/>
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea type="text" class="form-control" th:field="*{content}" cols="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+</div><!-- /.container -->
+
+</body>
+</html>

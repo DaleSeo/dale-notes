@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: header">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Note List</h3>
+
+    <a class="btn btn-primary" th:href="@{/notes/new}">New Note</a>
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody th:if="${#lists.isEmpty(noteList)}">
+            <tr>
+                <td scope="row" colspan="3">Not Data Found</td>
+            </tr>
+        </tbody>
+
+        <tbody th:unless="${#lists.isEmpty(noteList)}">
+            <tr th:each="note: ${noteList}">
+                <td scope="row" th:text="${note.id}"></td>
+                <td>
+                    <a th:text="${note.title}" th:href="@{/notes/{id}/view(id=${note.id})}"></a>
+                </td>
+                <td th:text="${note.date}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div><!-- /.container -->
+
+</body>
+</html>

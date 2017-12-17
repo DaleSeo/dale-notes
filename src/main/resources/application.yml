@@ -1,0 +1,9 @@
+spring:
+  output:
+      ansi:
+        enabled: ALWAYS
+  devtools:
+    livereload:
+      enabled: true
+  thymeleaf:
+    cache: false
