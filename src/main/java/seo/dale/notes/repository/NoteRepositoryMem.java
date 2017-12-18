@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import seo.dale.notes.model.Note;
 import seo.dale.notes.model.NoteExcpetion;
 
 @Repository
+@Profile("development")
 public class NoteRepositoryMem implements NoteRepository {
     private final Map<String, Note> map = new HashMap<>();
 

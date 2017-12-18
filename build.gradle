@@ -34,7 +34,9 @@ repositories {
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf',
 		    'org.springframework.boot:spring-boot-devtools',
-			'org.projectlombok:lombok'
+			'org.projectlombok:lombok',
+            'com.amazonaws:aws-java-sdk-dynamodb:1.11.250'
+
 
     testCompile 'org.springframework.boot:spring-boot-starter-test',
 				'org.assertj:assertj-core'

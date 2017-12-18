@@ -76,7 +76,7 @@
         <!-- http://checkstyle.sf.net/config_naming.html -->
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
-            <property name="allowedAbbreviationLength" value="0"/>
+            <property name="allowedAbbreviationLength" value="2"/>
             <property name="allowedAbbreviations" value="AST"/>
         </module>
         <module name="AbstractClassName"/>
@@ -111,7 +111,6 @@
         <module name="AvoidStaticImport"/>
         <module name="CustomImportOrder"/>
         <module name="IllegalImport"/>
-        <module name="ImportOrder"/>
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
 
@@ -154,7 +153,6 @@
         <module name="NoWhitespaceBefore"/>
         <module name="OperatorWrap"/>
         <module name="ParenPad"/>
-        <module name="SeparatorWrap"/>
         <module name="SingleSpaceSeparator"/>
         <module name="TypecastParenPad"/>
         <module name="WhitespaceAfter"/>
