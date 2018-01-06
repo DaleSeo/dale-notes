@@ -9,14 +9,14 @@
 
     <h3>Note View</h3>
 
-    <div class="card">
+    <div class="card" th:object="${note}">
         <div class="card-body">
-            <h4 th:text="${note.title}" class="card-title">Title</h4>
-            <h6 th:text="${note.date}" class="card-subtitle mb-2 text-muted">Date</h6>
-            <p th:text="${note.content}" class="card-text"></p>
+            <h4 th:text="*{title}" class="card-title">Title</h4>
+            <h6 th:text="*{date}" class="card-subtitle mb-2 text-muted">Date</h6>
+            <p th:text="*{content}" class="card-text"></p>
             <a th:href="@{/notes/list}" class="card-link">List</a>
-            <a th:href="@{/notes/{id}/edit}" class="card-link">Edit</a>
-            <a th:href="@{/notes/{id}/delete}" class="card-link">Delete</a>
+            <a th:href="@{/notes/{id}/edit(id=*{id})}" class="card-link">Edit</a>
+            <a th:href="@{/notes/{id}/delete(id=*{id})}" class="card-link">Delete</a>
         </div>
     </div>
 

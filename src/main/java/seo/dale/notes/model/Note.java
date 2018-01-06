@@ -21,12 +21,10 @@ public class Note {
 
     public Note() {
         this.id = UUID.randomUUID().toString();
-        this.date = ZonedDateTime.now(ZoneOffset.UTC);
     }
 
     public Note(String title, String content) {
-        this.id = UUID.randomUUID().toString();
-        this.date = ZonedDateTime.now();
+        this();
         this.title = title;
         this.content = content;
     }
