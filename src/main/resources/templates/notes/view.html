@@ -15,8 +15,8 @@
             <h6 th:text="${note.date}" class="card-subtitle mb-2 text-muted">Date</h6>
             <p th:text="${note.content}" class="card-text"></p>
             <a th:href="@{/notes/list}" class="card-link">List</a>
-            <a th:href="@{/notes/{id}/edit(id=${note.id})}" class="card-link">Edit</a>
-            <a th:href="@{/notes/{id}/delete(id=${note.id})}" class="card-link">Delete</a>
+            <a th:href="@{/notes/{id}/edit}" class="card-link">Edit</a>
+            <a th:href="@{/notes/{id}/delete}" class="card-link">Delete</a>
         </div>
     </div>
 
