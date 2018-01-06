@@ -31,7 +31,6 @@ public class NoteService {
 
     public void modify(String id, Note note) {
         note.setId(id);
-        note.setDate(ZonedDateTime.now(ZoneOffset.UTC));
         noteRepo.save(note);
     }
 
