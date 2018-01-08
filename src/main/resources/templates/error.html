@@ -8,6 +8,12 @@
 <div class="container">
 
     <h3>Error</h3>
+    <div th:if="${exception}">
+        <p th:text="${exception}"></p>
+        <div th:each="stack: ${exception.stackTrace}">
+            <div th:text="${stack}"></div>
+        </div>
+    </div>
 
 </div><!-- /.container -->
 
