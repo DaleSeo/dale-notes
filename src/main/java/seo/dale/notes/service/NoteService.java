@@ -1,40 +1,18 @@
 package seo.dale.notes.service;
 
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
+import seo.dale.notes.model.Condition;
+import seo.dale.notes.model.Note;
+
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-import seo.dale.notes.model.Note;
-import seo.dale.notes.repository.NoteRepository;
+public interface NoteService {
+    List<Note> list(Condition condition);
 
-@Service
-public class NoteService {
-    private final NoteRepository noteRepo;
+    Note detail(Long id);
 
-    public NoteService(NoteRepository noteRepo) {
-        this.noteRepo = noteRepo;
-    }
+    Note create(Note note);
 
-    public List<Note> list() {
-        return noteRepo.findAll();
-    }
+    Note modify(Long id, Note note);
 
-    public Note detail(String id) {
-        return noteRepo.findOne(id);
-    }
-
-    public void create(Note note) {
-        note.setDate(ZonedDateTime.now(ZoneOffset.UTC));
-        noteRepo.save(note);
-    }
-
-    public void modify(String id, Note note) {
-        note.setId(id);
-        noteRepo.save(note);
-    }
-
-    public void remove(String id) {
-        noteRepo.delete(id);
-    }
+    void delete(Long id);
 }

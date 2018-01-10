@@ -1,16 +1,9 @@
 package seo.dale.notes.repository;
 
-import java.util.List;
-
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import seo.dale.notes.model.Note;
 
-public interface NoteRepository {
-
-    List<Note> findAll();
-
-    Note findOne(String id);
-
-    void save(Note note);
-
-    void delete(String id);
+@Repository
+public interface NoteRepository extends JpaRepository<Note, Long> {
 }

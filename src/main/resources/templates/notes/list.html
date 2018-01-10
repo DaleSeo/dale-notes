@@ -36,6 +36,15 @@
         </tbody>
     </table>
 
+    <form th:object="${condition}" class="form-inline float-right">
+        <div class="input-group">
+            <input type="search" class="form-control" th:field="*{keyword}"/>
+            <div class="input-group-append">
+                <button class="input-group-text"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
 </div><!-- /.container -->
 
 </body>
